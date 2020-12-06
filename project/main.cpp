@@ -10,7 +10,7 @@ using namespace std;
 //int main(int argc, char **argv)
 int main()
 {
-   
+   /*
    fstream ifile;
    ifile.open("/clam/u3/students/gmk83/Final-project/cpp-final-project-abs/project/data");
        if (!ifile) {
@@ -19,4 +19,26 @@ int main()
        }
        ifile.close()
        return 0;
+    */
+    Sandpile grid(10,Row(10,4));
+    bool is_stable = false;
+    while(!is_stable)
+    {
+        is_stable = true;
+        for(int Ridx = 0; Ridx < 10; Ridx ++)
+        {
+            for(int Cidx = 0; Cidx < 10; Cidx ++)
+            {
+                if(grid[Ridx][Cidx] >= 4)
+                {
+                    grid[Ridx][Cidx] -= 4;
+                    grid[Ridx - 1][Cidx] += 1;
+                    grid[Ridx + 1][Cidx] += 1;
+                    grid[Ridx][Cidx - 1] += 1;
+                    grid[Ridx][Cidx + 1] += 1;
+                }
+                
+            }
+        }
+    }
 }
