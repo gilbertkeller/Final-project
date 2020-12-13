@@ -37,8 +37,50 @@ int main()
                     grid[Ridx][Cidx - 1] += 1;
                     grid[Ridx][Cidx + 1] += 1;
                 }
+                if(grid[Ridx] < 0 || grid[Ridx] > 0)
+                {
+                    continue; // row out of bounds
+                }
+
+                if(grid[Cidx] < 0 || grid[Cidx] > o)
+                {
+                    continue; //column out of bounds
+                }
+
+                else if(grid[Ridx][Cidx] >= 3)
+                {
+                    grid[Ridx][Cidx] -= 3;
+                    grid[Ridx - 2][Cidx - 2] += 1;
+                    grid[Ridx + 2][Cidx + 2] += 1;
+                    grid[Ridx - 2][Cidx - 2] += 1;
+                    grid[Ridx + 2][Cidx + 2] += 1;
+                }
+
+                else if(grid[Ridx][Cidx] >= 2)
+                {
+                    grid[Ridx][Cidx] -= 2;
+                    grid[Ridx - 3][Cidx - 3] += 1;
+                    grid[Ridx + 3][Cidx + 3] += 1;
+                    grid[Ridx - 3][Cidx - 3] += 1;
+                    grid[Ridx + 3][Cidx + 3] += 1;
+                }
+
+                else if(grid[Ridx][Cidx] >= 1)
+                {
+                    grid[Ridx][Cidx] -= 1;
+                    grid[Ridx - 4][Cidx - 4] += 1;
+                    grid[Ridx + 4][Cidx + 4] += 1;
+                    grid[Ridx - 4][Cidx - 4] += 1;
+                    grid[Ridx + 4][Cidx + 4] += 1;
+                }
+
+                else 
+                {
+                     cout << " ";
+                }
                 
             }
         }
     }
+   
 }
