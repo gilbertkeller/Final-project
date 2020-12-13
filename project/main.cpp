@@ -4,23 +4,28 @@
 #include "sandpile.h"
 #include "make_sandpile.h"
 #include <fstream>
+#include <algorithm>
+#include <iterator>
+#include <fstream>
+#include <sstream>
 
+using namespace ifstream
 using namespace std;
 
 //int main(int argc, char **argv)
 int main()
 {
-   /*
-   fstream ifile;
-   ifile.open("/clam/u3/students/gmk83/Final-project/cpp-final-project-abs/project/data");
-       if (!ifile) {
+    
+   ifstream infile;
+   infile.open("/clam/u3/students/gmk83/Final-project/cpp-final-project-abs/project/data.data");
+       if (!infile) {
            cout << "Unable to open file";
            exit(1); // terminate with error 
        }
-       ifile.close()
+       infile.close()
        return 0;
-    */
-    Sandpile grid(10,Row(10,4));
+    
+    //andpile grid(10,Row(10,4));
     bool is_stable = false;
     while(!is_stable)
     {
@@ -76,7 +81,7 @@ int main()
 
                 else 
                 {
-                     cout << " ";
+                     return 0;
                 }
                 
             }
