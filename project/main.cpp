@@ -9,23 +9,30 @@
 #include <fstream>
 #include <sstream>
 
-using namespace ifstream
+using Row = std::vector<int>;
+using Sandpile = std::vector<Row>;
+using Animation = std::vector<Sandpile>;
 using namespace std;
 
 //int main(int argc, char **argv)
 int main()
 {
-    
-   ifstream infile;
-   infile.open("/clam/u3/students/gmk83/Final-project/cpp-final-project-abs/project/data.data");
-       if (!infile) {
-           cout << "Unable to open file";
-           exit(1); // terminate with error 
+  
+    //uniform_int_distribution<int> dis(0, s);
+    //mt19937 engine;
+    /*
+    ifstream infile("/clam/u3/students/gmk83/Final-project/cpp-final-project-abs/project/data.data");
+    while(getline(data, istringstream ss(buffer)));
+       if (!infile) 
+       {
+          cerr << "Could not load" << data << endl;
+          return 1;
        }
        infile.close()
        return 0;
-    
-    //andpile grid(10,Row(10,4));
+    copy(std::istream_iterator<int>(ss), {}, std::back_inserter(sandpile.emplace_back())); 
+    */
+    sandpile grid(10,Row(10,4));
     bool is_stable = false;
     while(!is_stable)
     {
@@ -33,7 +40,7 @@ int main()
         for(int Ridx = 0; Ridx < 10; Ridx ++)
         {
             for(int Cidx = 0; Cidx < 10; Cidx ++)
-            {
+            { 
                 if(grid[Ridx][Cidx] >= 4)
                 {
                     grid[Ridx][Cidx] -= 4;
