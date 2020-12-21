@@ -16,7 +16,7 @@ ifeq ($(SRC),)
 $(error No source files found, there is nothing to build!)
 endif
 
-INCLUDES:=-I../include -I include
+INCLUDES:=-isystem ../include -isystem include
 
 PYVERSION:=$(shell $(PYTHON) --version)
 PY8_REGEX:=^Python [0-9]+\.8\.[0-9]+$
