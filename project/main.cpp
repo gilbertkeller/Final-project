@@ -15,7 +15,7 @@ using Row = std::vector<int>;
 using Sandpile = std::vector<Row>;
 using Animation = std::vector<Sandpile>;
 using namespace std;
-/*
+
 int main(int , char **argv)
 {
   
@@ -85,9 +85,9 @@ int main(int , char **argv)
     }
     animate(animation_frames);
 }
-*/
 
 
+/*
 int main(int argc, char **argv)
 {
     Sandpile grid;
@@ -175,4 +175,4 @@ int main(int argc, char **argv)
     }
     animate(animation_frames);
 }
- 
+*/
